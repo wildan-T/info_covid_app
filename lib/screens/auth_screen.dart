@@ -21,7 +21,7 @@ class _AuthScreenState extends State<AuthScreen> {
         email: _emailController.text.trim(),
         password: _passwordController.text.trim(),
       );
-      if (mounted) Navigator.pop(context); // Kembali ke AuthGate
+      if (mounted) Navigator.pop(context);
     } on AuthException catch (e) {
       if (mounted)
         ScaffoldMessenger.of(
