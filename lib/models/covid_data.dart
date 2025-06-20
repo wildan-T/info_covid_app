@@ -15,7 +15,6 @@ class CovidData {
     required this.total,
   });
 
-  // Factory constructor untuk membuat instance dari Map (data dari Supabase)
   factory CovidData.fromMap(Map<String, dynamic> map) {
     return CovidData(
       id: map['id'] as int,

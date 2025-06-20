@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:info_covid_app/models/covid_data.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class UpsertScreen extends StatefulWidget {
-  final Map<String, dynamic>? covidData;
+  final CovidData? covidData;
   const UpsertScreen({super.key, this.covidData});
 
   @override
@@ -21,10 +22,10 @@ class _UpsertScreenState extends State<UpsertScreen> {
   void initState() {
     super.initState();
     if (widget.covidData != null) {
-      _kotaController.text = widget.covidData!['kota'];
-      _sembuhController.text = widget.covidData!['sembuh'].toString();
-      _dirawatController.text = widget.covidData!['dirawat'].toString();
-      _meninggalController.text = widget.covidData!['meninggal'].toString();
+      _kotaController.text = widget.covidData!.kota;
+      _sembuhController.text = widget.covidData!.sembuh.toString();
+      _dirawatController.text = widget.covidData!.dirawat.toString();
+      _meninggalController.text = widget.covidData!.meninggal.toString();
     }
   }
 
@@ -51,7 +52,7 @@ class _UpsertScreenState extends State<UpsertScreen> {
       } else {
         // Mode Edit: Sesuai alur EditScreen
         await Supabase.instance.client.from('covid_data').update(data).match({
-          'id': widget.covidData!['id'],
+          'id': widget.covidData!.id,
         });
       }
 

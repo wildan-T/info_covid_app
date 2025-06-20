@@ -19,7 +19,8 @@ class AuthGate extends StatelessWidget {
           }
         }
         // Jika user belum login (sebagai Tamu)
-        return const HomeScreen(isAdmin: false);
+        return const HomeScreen(isAdmin: true);
+        // return const HomeScreen(isAdmin: false);
       },
     );
   }
