@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:info_covid_app/models/covid_data.dart';
+import 'package:info_covid_app/controllers/covid_data_controller.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'upsert_screen.dart';
 import 'auth_screen.dart';
